@@ -2,7 +2,7 @@
 
 A conditional proof of Rudin's original conjecture, by **Alexey Kravatskiy** (MIRIAI, Moscow).
 
-[Read the preprint (PDF)](preprint/rudin-abc.pdf) · [LaTeX source and bibliography](./preprint/README.md)
+[Read the preprint (PDF)](preprint/rudin-abc.pdf) · [LaTeX source and bibliography](./preprint/README.md) · [Lean verification](lean/README.md)
 
 ## Result
 
@@ -17,7 +17,7 @@ With TeX Live and `latexmk` installed, run:
     cd preprint
     latexmk -pdf rudin-abc.tex
 
-The preprint is available here on GitHub. No arXiv identifier is assigned yet. Lean formalization is planned; this repository does not currently contain a Lean-verified proof.
+The preprint is available here on GitHub. No arXiv identifier is assigned yet. The [Lean 4 project](lean/README.md) verifies the same argument at $\varepsilon=1/4$, with classical abc as an explicit hypothesis. The final theorem is `RudinABC.formalConjectures_abc_implies_rudin`, in the exact pinned DeepMind `Qmax` formulation. See the [proof crosswalk](lean/CROSSWALK.md) and [verification record](lean/VERIFICATION.txt).
 
 ## Cite
 

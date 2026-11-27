@@ -1,0 +1,26 @@
+Rudin from classical abc: verified standalone replay
+
+Lean: 4.33.1, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6
+Mathlib: v4.33.1, commit 0df444a360eaa60ab8c11dca51a86af692955474
+English argument: Kravatskiy, RudinConjecture commit 8dc8f1d21c697c9f304612843091fa36e269439a
+DeepMind Formal Conjectures source: ea8e3e198ded6fc73efb7f5653b74b28ac4ae1a8
+
+./tools/verify.sh --clean
+  Checked 26 Lean source files: no admissions, axioms, or native_decide.
+  Build completed successfully (2069 jobs); warnings treated as errors.
+  Checked 32 declaration audits: only standard Lean axioms.
+  The audit for RudinABC.formalConjectures_abc_implies_rudin lists exactly
+  propext, Classical.choice, Quot.sound. The hypothesis is explicitly classical abc.
+
+Pinned definitions were independently checked for exact extraction from the two
+SHA-256-pinned official files. The final theorem uses the actual names
+ABC.radical and RudinsConjecture.Qmax; the precise classical abc finite-exception
+premise has no admitted proof in this package. The standalone project does not
+import the upstream open conjecture stubs. See integration/CheckDeepMind.lean
+for the optional downstream harness; the combined full-upstream build was not
+part of the verified local standalone replay.
+
+Additional kernel replay: `lake env leanchecker RudinABC -v` exited 0,
+replaying all 24 project modules in their import environments. This is an
+additional invocation of the Lean kernel, not an independent implementation
+or a replay of all imported Mathlib declarations.
