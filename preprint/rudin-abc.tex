@@ -25,23 +25,25 @@ Moscow, Russia}
 
 \begin{document}
 \begin{abstract}
-Assuming the classical $abc$ conjecture, we prove that every arithmetic
-progression of length $N$ with nonzero common difference contains
+Assuming the classical $abc$ conjecture, we prove that every length-$N$
+arithmetic progression of integers with nonzero common difference contains
 $O(\sqrt N)$ squares, uniformly in its initial term and common difference.
-Gaussian factorization and the Pl\"ucker relation turn four representations
-of an integer as a sum of two squares into a quartic equation with pairwise
-coprime bases and coefficients bounded polynomially in $N$. A weighted cut
-argument combines the equations from five representations to bound the
-common difference polynomially in $N$ whenever a primitive progression
-contains more than $5\sqrt N$ positive squares. We then bound the number
-of square roots of the initial term modulo the common difference.
+We use Gaussian factorization and the Pl\"ucker relation to obtain an
+equation in three fourth powers from four representations of the same
+integer as a sum of two squares. Its coefficients are bounded polynomially
+in $N$, and the three bases are pairwise coprime. When a primitive
+progression contains more than $5\sqrt N$ positive squares, a weighted cut
+argument combines these equations for five representations and gives a
+polynomial bound on the common difference. A bound on the number of
+solutions to a quadratic congruence then yields the stated estimate.
 \end{abstract}
 \maketitle
 
 \section{Introduction}
 
-For integers $a$ and $q\ne0$, let $Q(N;q,a)$ be the number of squares among
-$a,a+q,\ldots,a+(N-1)q$, and set $Q(N)=\max_{q\ne0,a}Q(N;q,a)$.
+For integers $N\ge1$, $a$, and $q\ne0$, let $Q(N;q,a)$ be the number
+of squares among $a,a+q,\ldots,a+(N-1)q$, and set
+$Q(N)=\max_{a,q:\,q\ne0}Q(N;q,a)$.
 Rudin's conjecture asserts that $Q(N)\ll\sqrt N$ \cite{Rudin,CG}.
 This order is sharp, as the progression $1,2,\ldots,N$ shows.
 
@@ -59,53 +61,54 @@ $Q(N)\ll_\varepsilon\sqrt N$.
 \end{theorem}
 
 In particular, no $N^\varepsilon$ loss occurs in the exponent of the
-conclusion. The theorem does not establish the stronger conjecture of
-Gonz\'alez-Jim\'enez and Xarles \cite{GJX} that $Q(N)=Q(N;24,1)$ for
+conclusion. The theorem does not settle the stronger conjecture, studied by
+Gonz\'alez-Jim\'enez and Xarles \cite{GJX}, that $Q(N)=Q(N;24,1)$ for
 $N\ge6$.
 
 \medskip
 \noindent\textbf{Lean verification.}
-To make the deduction from $abc$ independently machine-checkable,
-we formalized the proof in Lean~4 at $\varepsilon=1/4$ \cite{RudinLean}.
-The formalization verifies the implication while leaving $abc$ as a
-hypothesis.
+The argument at $\varepsilon=1/4$ has been verified in Lean~4
+\cite{RudinLean}. The formal theorem takes $abc$ as an explicit hypothesis.
 
 \medskip
 \noindent\textbf{Related work.}
 Bombieri, Granville and Pintz \cite{BGP} obtained the unconditional bound
 $Q(N)\ll N^{2/3}(\log N)^{O(1)}$; Bombieri and Zannier \cite{BZ}
-improved the exponent to $3/5$. Bourgain and Demeter \cite{BD} obtain
-the square-root bound when the common
-difference has a bounded number of divisors; Novakovi\'c \cite{Novakovic}
-obtains the exponent $1/2+\eta$ for polynomially bounded differences,
-for every fixed $\eta>0$. Theorem~\ref{thm:main}
-imposes no restriction on the common difference and has no logarithmic
-loss, but assumes \eqref{eq:abc}.
+reduced the power of $N$ to $3/5$. Bourgain and Demeter \cite{BD} obtained
+the square-root bound when the common difference has a bounded number of
+divisors. For polynomially bounded differences, Novakovi\'c
+\cite[Theorem~1.4]{Novakovic} obtained the exponent $1/2+\eta$ for every
+fixed $\eta>0$. Theorem~\ref{thm:main} assumes \eqref{eq:abc} but imposes
+no restriction on the common difference and has no logarithmic loss.
 
 \medskip
-\noindent\textbf{What the proof adds.}
-Cilleruelo and Granville \cite[Section~5, Theorem~12]{CG} already use
-the reduction to a circle and the final congruence argument, obtaining
-the polynomial bound from a separate conjecture on points on circles.
-In a different approach \cite[Section~9]{CG}, they use $abc$ to study a
-three-term relation whose degree depends on the gaps between five squares. Their estimate under a strengthening
-of $abc$ due to Baker leaves an exponential range for the progression
-parameters. More recently, Croot, Mao and Yip
+\noindent\textbf{Relation to earlier approaches.}
+Cilleruelo and Granville \cite[Section~5, Theorem~12]{CG} reduce the problem
+to representations as sums of two squares. They use Gaussian divisibility
+and a conjecture on lattice points on circles to bound the common difference,
+then use a quadratic congruence to bound the number of squares. In a
+separate argument \cite[Section~9]{CG}, they use a strengthening of $abc$
+due to Baker on a relation whose degree depends on the gaps between five
+squares, obtaining a bound exponential in a power of $N$.
+Croot, Mao and Yip
 \cite[Theorem~2.5 and Remark~2.6]{CMY} obtained almost sharp conditional
 bounds for powers $k\ge4$ and did not treat $k=2,3$ in that theorem.
 
-The new step is the polynomial bound within the circle reduction. Starting
-from five representations of one sum of two squares, we apply the Pl\"ucker
-relation to each quartet. This gives an equation with three fourth powers. Gaussian factorization and
-rounding the prime valuations make the coefficients polynomially bounded
-in $N$ and the three fourth-power bases pairwise coprime. Thus $abc$ bounds
-each base polynomially: the largest base contributes its fourth power
-to the size, whereas the three bases together contribute at most its
-third power to the radical. Each base collects prime powers attached to
-one balanced partition of the quartet. The five choices of quartet detect
-every $2+3$ cut on the five labels; comparison with all ten pairwise
-Gaussian gcds then bounds the circle norm, and hence the common difference,
-polynomially in $N$. The final congruence count gives $O(\sqrt N)$.
+Our main step is to derive a polynomial bound on the common difference
+from $abc$ within the circle reduction. We apply the Pl\"ucker relation
+to each set of four out of five representations of the same integer as a
+sum of two squares. Gaussian factorization and rounding of valuations
+give an equation with three fourth-power terms. Their bases are pairwise
+coprime and their coefficients are bounded polynomially in $N$. Up to
+polynomial factors in $N$, the largest base contributes its fourth power
+to the size of the largest term, whereas the three bases contribute at
+most its third power to the radical. The $abc$ inequality therefore
+bounds each base. Each partition of the five representations into parts
+of sizes two and three restricts to a balanced partition on at least one
+of the chosen sets of four. The bounds for the bases, together with
+estimates for the norms of the Gaussian gcds, give a polynomial bound on
+the circle's squared radius and hence on the common difference. The
+quadratic congruence then gives the square-root estimate.
 
 \section{Five representations on a circle}
 
@@ -114,19 +117,21 @@ contains a square. Write $\gcd(a,q)=b^2g$ with $g$ squarefree and put
 $a=b^2g A$, $q=b^2g Q$, where $\gcd(A,Q)=1$.
 If $a+qn=x^2$, then $bg$ divides $x$ and $g$ divides $A+Qn$.
 Existence of such an index implies $\gcd(g,Q)=1$. The admissible indices
-thus lie in one residue class $n=n_0+gk$, and division by $(bg)^2$
-gives the progression
+thus lie in one residue class modulo $g$. Let $n_0$ be the smallest
+index in this class in the original progression. Dividing the terms
+with indices $n=n_0+gk$ by $(bg)^2$ gives the progression
 \[
  \frac{A+Qn_0}{g}+Qk.
 \]
-It has length at most $N$, has the same number of squares, and its
-initial term is coprime to $Q$. We may therefore assume
+It has length at most $N$ and contains the same number of squares.
+Its initial term is coprime to $Q$ because $A+Qn_0$ is. We may therefore assume
 $\gcd(a,q)=1$. The term zero contributes at most one square and is
 ignored below.
 
 Suppose there are $m>5\sqrt N$ positive squares. The $\binom m2$ unordered
-pairs of distinct square terms have at most $2N-1$ index sums.
-Some index sum $t$ therefore occurs for at least five pairs.
+pairs of distinct positive square terms have at most $2N-1$ possible
+index sums. Since $\binom m2\ge m^2/3>4(2N-1)$, some index sum $t$
+occurs for at least five pairs.
 Write the corresponding representations as
 \begin{equation}\label{eq:circle}
  \begin{gathered}
@@ -148,21 +153,26 @@ $a_i^2+b_i^2=S^2$. For $i<j$ write
  D_{ij}=a_i b_j-b_i a_j,\qquad E_{ij}=a_i b_j+b_i a_j.
 \]
 Both are positive. Let $g_{ij}$ be a Gaussian gcd of $z_i,z_j$, and put
-$u=z_i/g_{ij}$, $v=z_j/g_{ij}$. These are coprime and have equal norm,
-so $u\bar u=v\bar v$ implies that $v$ is a unit multiple of $\bar u$.
+$u=z_i/g_{ij}$, $v=z_j/g_{ij}$. They are coprime and have equal norm.
+Since $u\mid v\bar v$ and $\gcd(u,v)=1$ in $\Z[\ii]$, we have
+$u\mid\bar v$. Equality of norms then shows that $v$ is a unit
+multiple of $\bar u$.
 Set
 \[
  K'_{ij}=|g_{ij}|^2,\qquad K_{ij}=|u|^2,\qquad K_{ij}K'_{ij}=S .
 \]
-Taking imaginary parts in $\bar z_i^2 z_j^2$ and $z_i^2 z_j^2$
-shows that $(K'_{ij})^2\mid D_{ij}$ and $K_{ij}^2\mid E_{ij}$.
+The product $\bar z_i z_j=K'_{ij}\bar u v$ is divisible by $K'_{ij}$
+in $\Z[\ii]$. Also $z_i z_j=g_{ij}^2uv$ is divisible by $K_{ij}$,
+since $uv$ is a unit multiple of $u\bar u$. Squaring and taking
+imaginary parts gives $(K'_{ij})^2\mid D_{ij}$ and $K_{ij}^2\mid E_{ij}$.
 
 In fact
 \begin{equation}\label{eq:J}
  J^-_{ij}=\frac{D_{ij}}{q(K'_{ij})^2},\qquad
  J^+_{ij}=\frac{E_{ij}}{qK_{ij}^2}
 \end{equation}
-are integers. Indeed, $q$ divides both minors and $\gcd(q,S)\mid2$.
+are integers. Indeed, $q$ divides both minors and
+$\gcd(q,S)=\gcd(q,2a)=\gcd(q,2)$.
 If $q$ is even then $x_i,y_i$ are all odd, so $v_2(S)=1$,
 $v_2(K'_{ij})=1$, and $v_2(K_{ij})=0$. Now
 $D_{ij}=2q(d_i x_j y_j-d_j x_i y_i)$ and the expression in parentheses
@@ -193,8 +203,9 @@ After cancelling $q^2$ the relation becomes
  A_1X_1^2+A_2X_2^2=A_3X_3^2,\qquad 1\le A_\nu\le N^4.
 \end{equation}
 
-For each odd split prime power $p^e\Vert S$, fix a Gaussian prime $\pi$
-above $p$. Let $\alpha_i=v_\pi(z_i)$, so that
+For each odd prime $p$ that splits in $\Z[\ii]$ and satisfies
+$p^e\Vert S$, fix a Gaussian prime $\pi$ above $p$.
+Let $\alpha_i=v_\pi(z_i)$, so that
 $v_{\bar\pi}(z_i)=e-\alpha_i$. Choose $\beta_i\in\{0,1\}$ with
 $e\beta_i$ nearest to $\alpha_i$, choosing a tie once for each $p,i$
 throughout the proof. Then
@@ -203,17 +214,18 @@ throughout the proof. Then
  v_p(K'_{ij})=e-|\alpha_i-\alpha_j|.
 \end{equation}
 For the first inequality, $p^{\min(\alpha_i,e-\alpha_i)}$ divides both
-$x_i$ and $y_i$, and $p\nmid q$. For the second, take the smaller
+$x_i$ and $y_i$, so its square divides $qd_i$; here $p\nmid q$.
+For the second, take the smaller
 valuation at each of $\pi,\bar\pi$ in the gcd.
 
-At the prime $p$, the idealized valuation of $X_\nu$ obtained by
+At the prime $p$, the rounded valuation of $X_\nu$ obtained by
 replacing $\alpha_i$ with $e\beta_i$ is
 $e(\mathbf{1}_{\beta_i=\beta_j}+\mathbf{1}_{\beta_k=\beta_l})$.
 The error is at most $\tfrac12\sum_i v_p(d_i)$ by \eqref{eq:valuation}.
-For a $2+2$ split of the labels, the idealized valuations of the
+For a $2+2$ split of the labels, the rounded valuations of the
 three $X_\nu$ are $2e,0,0$ in some order; the valuation $2e$
 belongs to the pairing that matches equal labels. In all other cases
-the three idealized valuations agree. Let $P_\nu$ be the product of
+the three rounded valuations agree. Let $P_\nu$ be the product of
 the $p^e$ whose labels form a $2+2$ split with equal labels paired by $\nu$.
 The three integers $P_\nu$ are pairwise coprime. At inert primes and at
 $2$ the actual valuations of all three $X_\nu$ agree: a Gaussian prime
@@ -237,8 +249,9 @@ $D_0^2$. Since $D_0 t_\nu$ is an integer at most $D_0^2$, we obtain
 
 Put $M=\max_\nu P_\nu$. The gcd of the three terms in
 \eqref{eq:quartic} divides $c_1c_2c_3$, since a prime divides at most
-one $P_\nu$. After division by this gcd the largest term is at least
-$M^4/N^{60}$, while the radical of the product is at most $N^{60}M^3$.
+one $P_\nu$. After division by the gcd the terms are pairwise coprime,
+since the first two sum to the third. The largest term is at least
+$M^4/N^{60}$, and the radical of the product is at most $N^{60}M^3$.
 Applying \eqref{eq:abc} gives
 \[
  M^{1-3\varepsilon}\le C_\varepsilon N^{120+60\varepsilon}.
@@ -250,8 +263,8 @@ In particular, for each of the five possible quadruples,
 
 \section{Weighted cuts}
 
-Restore all five indices. Each odd split prime power $p^e\Vert S$
-defines a cut on the five labels, with weight $e\log p$. For a pair
+Restore all five indices. For each odd split prime $p$ with $p^e\Vert S$,
+the labels $\beta_i$ define a cut of weight $e\log p$. For a pair
 $i,j$, the total weight of the cuts separating $i$ and $j$ differs
 from $\log K_{ij}$ by at most $(\log d_i+\log d_j)/2$, by
 \eqref{eq:valuation}. Inert primes and $2$ do not contribute to
@@ -272,13 +285,14 @@ and all three pairings in each. It follows from \eqref{eq:cuts} that
 $\log S\ll_\varepsilon\log(2N)$. Since $qd_i<S$, there is a fixed
 $B=B(\varepsilon)$ such that $q\ll_\varepsilon N^B$.
 
-\section{Counting roots modulo the common difference}
+\section{The quadratic congruence}
 
-The positive roots lie in an interval of length at most
-$\sqrt{qN}$ and satisfy $x^2\equiv a\pmod q$. Since $\gcd(a,q)=1$,
-there are at most two roots modulo each odd prime power dividing $q$
-and at most four modulo the power of $2$. The Chinese remainder theorem
-therefore gives
+The positive square roots of the square terms lie in an interval of length
+at most $\sqrt{qN}$, since the difference between the largest and smallest
+square terms is less than $qN$. They satisfy $x^2\equiv a\pmod q$.
+Because $\gcd(a,q)=1$, there are at most two solutions modulo each odd
+prime power dividing $q$ and at most four modulo the power of $2$.
+The Chinese remainder theorem therefore gives
 \[
  m\ll 2^{\omega(q)}\left(1+\sqrt{N/q}\right),
 \]
