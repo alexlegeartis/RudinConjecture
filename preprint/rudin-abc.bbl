@@ -7,6 +7,22 @@
 \providecommand{\href}[2]{#2}
 \begin{thebibliography}{1}
 
+\bibitem{BGP}
+Enrico Bombieri, Andrew Granville, and J{\'a}nos Pintz, \emph{Squares in
+  arithmetic progressions}, Duke Math. J. \textbf{66} (1992), no.~3, 369--385,
+  \href{https://doi.org/10.1215/S0012-7094-92-06612-9}{doi:10.1215/S0012-7094-92-06612-9}.
+
+\bibitem{BZ}
+Enrico Bombieri and Umberto Zannier, \emph{A note on squares in arithmetic
+  progressions, {II}}, Rend. Lincei Mat. Appl. \textbf{13} (2002), no.~2,
+  69--75,
+  \href{https://www.bdim.eu/item?id=RLIN_2002_9_13_2_69_0}{BDIM:RLIN\_2002\_9\_13\_2\_69\_0}.
+
+\bibitem{BD}
+Jean Bourgain and Ciprian Demeter, \emph{On the number of {$k$}-th powers
+  inside arithmetic progressions}, 2018,
+  \href{https://arxiv.org/abs/1811.11919}{arXiv:1811.11919}.
+
 \bibitem{CG}
 Javier Cilleruelo and Andrew Granville, \emph{Lattice points on circles,
   squares in arithmetic progressions and sumsets of squares}, Additive
@@ -15,12 +31,22 @@ Javier Cilleruelo and Andrew Granville, \emph{Lattice points on circles,
   \href{https://doi.org/10.1090/crmp/043/12}{doi:10.1090/crmp/043/12};
   \href{https://arxiv.org/abs/math/0608109}{arXiv:math/0608109}, pp.~241--262.
 
+\bibitem{CMY}
+Ernie Croot, Junzhe Mao, and Chi~Hoi Yip, \emph{Hilbert cubes in sets with
+  arithmetic properties}, 2026,
+  \href{https://arxiv.org/abs/2603.14654}{arXiv:2603.14654}.
+
 \bibitem{GJX}
 Enrique Gonz{\'a}lez-Jim{\'e}nez and Xavier Xarles, \emph{On a conjecture of
   {Rudin} on squares in arithmetic progressions}, LMS J. Comput. Math.
   \textbf{17} (2014), no.~1, 58--76,
   \href{https://doi.org/10.1112/S1461157013000259}{doi:10.1112/S1461157013000259};
   \href{https://arxiv.org/abs/1301.5122}{arXiv:1301.5122}.
+
+\bibitem{Novakovic}
+Sa{\v s}a Novakovi{\'c}, \emph{A comment on the number of {$k$}-th powers
+  inside arithmetic progressions}, 2026,
+  \href{https://arxiv.org/abs/2607.15895}{arXiv:2607.15895}.
 
 \bibitem{Rudin}
 Walter Rudin, \emph{Trigonometric series with gaps}, J. Math. Mech. \textbf{9}

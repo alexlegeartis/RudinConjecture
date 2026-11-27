@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying preprint."
+title: "RudinConjecture: Lean verification of Rudin's conjecture from abc"
+type: software
+authors:
+  - given-names: Alexey
+    family-names: Kravatskiy
+    affiliation: "MIRIAI"
+repository-code: "https://github.com/alexlegeartis/RudinConjecture"
+preferred-citation:
+  type: article
+  title: "Rudin's conjecture on squares in arithmetic progressions from abc"
+  authors:
+    - given-names: Alexey
+      family-names: Kravatskiy
+      affiliation: "MIRIAI"
+  year: 2026
+  url: "https://github.com/alexlegeartis/RudinConjecture/blob/main/preprint/rudin-abc.pdf"

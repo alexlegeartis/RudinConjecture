@@ -59,10 +59,42 @@ $Q(N)\ll_\varepsilon\sqrt N$.
 In particular, no $N^\varepsilon$ loss occurs in the exponent of the
 conclusion. The theorem does not establish the stronger conjecture of
 Gonz\'alez-Jim\'enez and Xarles \cite{GJX} that $Q(N)=Q(N;24,1)$ for
-$N\ge6$. The connection with lattice points on circles is classical; see
-especially \cite[Section~9]{CG}. Here $abc$ is applied to an equation
-with quartic terms obtained from four representations, rather than to
-a conjectural bound for lattice points on an arbitrary short arc.
+$N\ge6$.
+
+\medskip
+\noindent\textbf{Related work.}
+Bombieri, Granville and Pintz \cite{BGP} obtained the unconditional bound
+$Q(N)\ll N^{2/3}(\log N)^{O(1)}$; Bombieri and Zannier \cite{BZ}
+improved the exponent to $3/5$. Bourgain and Demeter \cite{BD} obtain
+the square-root bound when the common
+difference has a bounded number of divisors; Novakovi\'c \cite{Novakovic}
+obtains the exponent $1/2+\eta$ for polynomially bounded differences,
+for every fixed $\eta>0$. Theorem~\ref{thm:main}
+imposes no restriction on the common difference and has no logarithmic
+loss, but assumes \eqref{eq:abc}.
+
+\medskip
+\noindent\textbf{What the proof adds.}
+Cilleruelo and Granville \cite[Section~9]{CG} already proposed using $abc$:
+from five square terms they construct a three-term relation whose degree
+depends on the gaps between the terms. Their estimate under a strengthening
+of $abc$ due to Baker leaves an exponential range for the progression
+parameters. More recently, Croot, Mao and Yip
+\cite[Theorem~2.5 and Remark~2.6]{CMY} obtained almost sharp conditional
+bounds for powers $k\ge4$ and did not treat $k=2,3$ in that theorem.
+
+Here we use five \emph{representations of one sum of two squares}, rather
+than five individual square terms. For each quartet the Pl\"ucker relation
+gives an equation with three fourth powers. Gaussian factorization and
+rounding the prime valuations make the coefficients polynomially bounded
+in $N$ and the three fourth-power bases pairwise coprime. Thus $abc$ bounds
+each base polynomially: the largest base contributes its fourth power
+to the size, whereas the three bases together contribute at most its
+third power to the radical. Each base collects prime powers attached to
+one balanced partition of the quartet. The five choices of quartet detect
+every $2+3$ cut on the five labels; comparison with all ten pairwise
+Gaussian gcds then bounds the circle norm, and hence the common difference,
+polynomially in $N$. The final congruence count gives $O(\sqrt N)$.
 
 \section{Five representations on a circle}
 
@@ -248,6 +280,13 @@ with $p^\eta<2$ from the rest. This proves $m\ll_\varepsilon\sqrt N$
 also in the second range. Together with the case $m\le5\sqrt N$ and
 the initial normalization, this proves Theorem~\ref{thm:main}.
 \qed
+
+\section*{Lean verification}
+The \href{https://github.com/alexlegeartis/RudinConjecture/tree/main/lean}{Lean 4
+formalization} follows the same argument at $\varepsilon=1/4$, which is
+sufficient to deduce Rudin's conjecture from the classical $abc$ conjecture.
+The $abc$ statement is an explicit hypothesis, not an added axiom.
+The repository contains a proof crosswalk and a reproducible axiom audit.
 
 \section*{Acknowledgments}
 The author posed the problem and asked whether the Riemann hypothesis

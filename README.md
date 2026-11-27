@@ -8,7 +8,7 @@ A preprint by **Alexey Kravatskiy** (MIRIAI, Moscow) on the implication from [ab
 
 Assume the classical integer [**abc conjecture**](https://en.wikipedia.org/wiki/Abc_conjecture) at one fixed exponent $1+\varepsilon$, with $0<\varepsilon<1/3$. Then every arithmetic progression of length $N$ and nonzero common difference contains $O(\sqrt N)$ squares, with a constant independent of its initial term and common difference. This proves the original square-root bound under the stated hypothesis. It does not prove the stronger claim that the progression $1,25,49,\ldots$ always attains the maximum for $N\ge6$.
 
-The proof uses five representations of the same integer as a sum of two squares. Gaussian factorization and the Plücker relation give quartic equations to which abc applies. A weighted cut argument bounds the common difference polynomially, and a count of roots modulo that difference gives the square-root bound.
+The proof uses five representations of the same integer as a sum of two squares. Gaussian factorization and the Plücker relation give quartic equations to which abc applies. A weighted cut argument bounds the common difference polynomially, and a count of roots modulo that difference gives the square-root bound. The [introduction](preprint/rudin-abc.pdf#page=1) explains the difference from the earlier circle and $abc$ approaches.
 
 ## Contributions and AI use
 
@@ -25,4 +25,4 @@ The preprint is available here on GitHub. No arXiv identifier is assigned yet. T
 
 ## Cite
 
-Alexey Kravatskiy, *Rudin's conjecture on squares in arithmetic progressions from abc*, preprint, November 2026. For a reproducible citation, use a GitHub permalink to the version you read.
+Alexey Kravatskiy, *Rudin's conjecture on squares in arithmetic progressions from abc*, preprint, November 2026. For a reproducible citation, use a GitHub permalink to the version you read. Citation metadata is in [`CITATION.cff`](CITATION.cff).
