@@ -1,0 +1,30 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{CG}
+Javier Cilleruelo and Andrew Granville, \emph{Lattice points on circles,
+  squares in arithmetic progressions and sumsets of squares}, Additive
+  Combinatorics, CRM Proc. Lecture Notes, vol.~43, Amer. Math. Soc.,
+  Providence, RI, 2007,
+  \href{https://doi.org/10.1090/crmp/043/12}{doi:10.1090/crmp/043/12};
+  \href{https://arxiv.org/abs/math/0608109}{arXiv:math/0608109}, pp.~241--262.
+
+\bibitem{GJX}
+Enrique Gonz{\'a}lez-Jim{\'e}nez and Xavier Xarles, \emph{On a conjecture of
+  {Rudin} on squares in arithmetic progressions}, LMS J. Comput. Math.
+  \textbf{17} (2014), no.~1, 58--76,
+  \href{https://doi.org/10.1112/S1461157013000259}{doi:10.1112/S1461157013000259};
+  \href{https://arxiv.org/abs/1301.5122}{arXiv:1301.5122}.
+
+\bibitem{Rudin}
+Walter Rudin, \emph{Trigonometric series with gaps}, J. Math. Mech. \textbf{9}
+  (1960), no.~2, 203--227,
+  \href{https://doi.org/10.1512/iumj.1960.9.59013}{doi:10.1512/iumj.1960.9.59013}.
+
+\end{thebibliography}
