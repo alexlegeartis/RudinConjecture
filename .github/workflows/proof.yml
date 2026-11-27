@@ -1,0 +1,54 @@
+name: Verify Lean proof and build preprint
+on:
+  push:
+    branches: [main]
+    paths: ['lean/**', 'preprint/**', '.github/workflows/proof.yml']
+  pull_request:
+    paths: ['lean/**', 'preprint/**', '.github/workflows/proof.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    name: Lean and axiom audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee # v1
+        with:
+          lake-package-directory: lean
+          auto-config: 'false'
+          use-mathlib-cache: 'false'
+          use-github-cache: 'false'
+      - name: Fetch pinned Mathlib build artifacts
+        working-directory: lean
+        run: ./tools/fetch-cache.sh
+      - name: Build, check source and audit axioms
+        working-directory: lean
+        run: ./tools/verify.sh --clean
+
+  preprint:
+    name: PDF from TeX and BibTeX
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-recommended texlive-fonts-recommended
+      - name: Rebuild from source
+        working-directory: preprint
+        run: |
+          rm -f rudin-abc.pdf rudin-abc.bbl
+          latexmk -pdf -interaction=nonstopmode -halt-on-error rudin-abc.tex
+          test -s rudin-abc.pdf
+          if grep -q 'There were undefined references' rudin-abc.log; then exit 1; fi
+          git diff --exit-code -- rudin-abc.bbl
