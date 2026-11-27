@@ -62,6 +62,15 @@ Gonz\'alez-Jim\'enez and Xarles \cite{GJX} that $Q(N)=Q(N;24,1)$ for
 $N\ge6$.
 
 \medskip
+\noindent\textbf{Lean verification.}
+The proof is formalized in Lean 4 at $\varepsilon=1/4$, which suffices
+for the implication from the classical $abc$ conjecture. The
+\href{https://github.com/alexlegeartis/RudinConjecture/blob/3fd777450db94362b38a173a2b0652daca43a6e7/lean/RudinABC/PinnedDeepMind.lean\#L19}{final Lean theorem}
+uses the exact Formal Conjectures formulation of Rudin's bound and takes
+$abc$ as an explicit hypothesis. The source, proof crosswalk, and audit
+are available at \url{https://github.com/alexlegeartis/RudinConjecture}.
+
+\medskip
 \noindent\textbf{Related work.}
 Bombieri, Granville and Pintz \cite{BGP} obtained the unconditional bound
 $Q(N)\ll N^{2/3}(\log N)^{O(1)}$; Bombieri and Zannier \cite{BZ}
@@ -280,13 +289,6 @@ with $p^\eta<2$ from the rest. This proves $m\ll_\varepsilon\sqrt N$
 also in the second range. Together with the case $m\le5\sqrt N$ and
 the initial normalization, this proves Theorem~\ref{thm:main}.
 \qed
-
-\section*{Lean verification}
-The \href{https://github.com/alexlegeartis/RudinConjecture/tree/main/lean}{Lean 4
-formalization} follows the same argument at $\varepsilon=1/4$, which is
-sufficient to deduce Rudin's conjecture from the classical $abc$ conjecture.
-The $abc$ statement is an explicit hypothesis, not an added axiom.
-The repository contains a proof crosswalk and a reproducible axiom audit.
 
 \section*{Acknowledgments}
 The author posed the problem and asked whether the Riemann hypothesis

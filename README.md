@@ -2,7 +2,7 @@
 
 A preprint by **Alexey Kravatskiy** (MIRIAI, Moscow) on the implication from [abc](https://en.wikipedia.org/wiki/Abc_conjecture) to [Rudin’s original conjecture](https://en.wikipedia.org/wiki/Rudin%27s_conjecture). The proof and its Lean 4 formalization were developed with OpenAI’s Dot.
 
-[Read the preprint (PDF)](preprint/rudin-abc.pdf) · [LaTeX source and bibliography](./preprint/README.md) · [Lean verification](lean/README.md)
+[Read the preprint (PDF)](preprint/rudin-abc.pdf) · [LaTeX source and bibliography](./preprint/README.md) · [Lean verification](lean/README.md) · [Exact Lean theorem](https://github.com/alexlegeartis/RudinConjecture/blob/3fd777450db94362b38a173a2b0652daca43a6e7/lean/RudinABC/PinnedDeepMind.lean#L19)
 
 ## Result
 
@@ -21,7 +21,7 @@ With TeX Live and `latexmk` installed, run:
     cd preprint
     latexmk -pdf rudin-abc.tex
 
-The preprint is available here on GitHub. No arXiv identifier is assigned yet. The [Lean 4 project](lean/README.md) verifies the same argument at $\varepsilon=1/4$, with classical abc as an explicit hypothesis. The final theorem is `RudinABC.formalConjectures_abc_implies_rudin`, in the exact pinned DeepMind `Qmax` formulation. See the [proof crosswalk](lean/CROSSWALK.md) and [verification record](lean/VERIFICATION.txt).
+The preprint is available here on GitHub. No arXiv identifier is assigned yet. The [Lean 4 project](lean/README.md) verifies the same argument at $\varepsilon=1/4$, with classical abc as an explicit hypothesis. The final theorem is [`RudinABC.formalConjectures_abc_implies_rudin`](https://github.com/alexlegeartis/RudinConjecture/blob/3fd777450db94362b38a173a2b0652daca43a6e7/lean/RudinABC/PinnedDeepMind.lean#L19), in the exact pinned DeepMind `Qmax` formulation. See the [proof crosswalk](lean/CROSSWALK.md) and [verification record](lean/VERIFICATION.txt).
 
 ## Cite
 
