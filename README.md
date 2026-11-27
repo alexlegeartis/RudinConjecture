@@ -12,7 +12,7 @@ The proof uses five representations of the same integer as a sum of two squares.
 
 ## Contributions and AI use
 
-Alexey Kravatskiy posed the problem and asked whether the Riemann hypothesis could be used to prove Rudin’s conjecture. OpenAI’s Dot, using GPT-6.2 Astra with Ultra reasoning effort, proposed the route through the classical abc conjecture and developed the conditional proof. At Kravatskiy’s request, Dot also formalized the same argument in Lean 4. The proof assumes abc, not the Riemann hypothesis.
+Alexey Kravatskiy posed the problem and asked whether the Riemann hypothesis could be used to prove Rudin’s conjecture. OpenAI’s Dot, using GPT-6.2 Astra with Ultra reasoning effort, proposed the route through the classical abc conjecture and developed the conditional proof. At Kravatskiy’s request, Dot also formalized the same argument in Lean 4.
 
 ## Build and status
 
