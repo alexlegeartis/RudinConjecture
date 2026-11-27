@@ -1,4 +1,4 @@
-# Rudin's conjecture on squares in arithmetic progressions from abc
+# Rudin's Conjecture on Squares in Arithmetic Progressions from the abc Conjecture
 
 **Alexey Kravatskiy**, MIRIAI (Moscow Independent Research Institute of Artificial Intelligence), Moscow, Russia.
 

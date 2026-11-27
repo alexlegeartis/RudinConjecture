@@ -9,7 +9,7 @@ authors:
 repository-code: "https://github.com/alexlegeartis/RudinConjecture"
 preferred-citation:
   type: article
-  title: "Rudin's conjecture on squares in arithmetic progressions from abc"
+  title: "Rudin's Conjecture on Squares in Arithmetic Progressions from the abc Conjecture"
   authors:
     - given-names: Alexey
       family-names: Kravatskiy

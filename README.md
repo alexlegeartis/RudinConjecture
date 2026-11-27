@@ -25,4 +25,4 @@ The preprint is available here on GitHub. No arXiv identifier is assigned yet. T
 
 ## Cite
 
-Alexey Kravatskiy, *Rudin's conjecture on squares in arithmetic progressions from abc*, preprint, November 2026. For a reproducible citation, use a GitHub permalink to the version you read. Citation metadata is in [`CITATION.cff`](CITATION.cff).
+Alexey Kravatskiy, *Rudin's Conjecture on Squares in Arithmetic Progressions from the abc Conjecture*, preprint, November 2026. For a reproducible citation, use a GitHub permalink to the version you read. Citation metadata is in [`CITATION.cff`](CITATION.cff).
