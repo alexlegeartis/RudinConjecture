@@ -63,12 +63,10 @@ $N\ge6$.
 
 \medskip
 \noindent\textbf{Lean verification.}
-The proof is formalized in Lean 4 at $\varepsilon=1/4$, which suffices
-for the implication from the classical $abc$ conjecture. The
-\href{https://github.com/alexlegeartis/RudinConjecture/blob/3fd777450db94362b38a173a2b0652daca43a6e7/lean/RudinABC/PinnedDeepMind.lean\#L19}{final Lean theorem}
-uses the exact Formal Conjectures formulation of Rudin's bound and takes
-$abc$ as an explicit hypothesis. The source, proof crosswalk, and audit
-are available at \url{https://github.com/alexlegeartis/RudinConjecture}.
+To make the deduction from $abc$ independently machine-checkable,
+we formalized the proof in Lean~4 at $\varepsilon=1/4$ \cite{RudinLean}.
+The formalization verifies the implication while leaving $abc$ as a
+hypothesis.
 
 \medskip
 \noindent\textbf{Related work.}

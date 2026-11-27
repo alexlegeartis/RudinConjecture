@@ -43,6 +43,14 @@ Enrique Gonz{\'a}lez-Jim{\'e}nez and Xavier Xarles, \emph{On a conjecture of
   \href{https://doi.org/10.1112/S1461157013000259}{doi:10.1112/S1461157013000259};
   \href{https://arxiv.org/abs/1301.5122}{arXiv:1301.5122}.
 
+\bibitem{RudinLean}
+Alexey Kravatskiy, \emph{{Lean} 4 formalization of {Rudin}'s conjecture from
+  {$abc$}}, GitHub repository, 2026,
+  \href{https://github.com/alexlegeartis/RudinConjecture/tree/3fd777450db94362b38a173a2b0652daca43a6e7/lean}{Source
+  and verification instructions};
+  \href{https://github.com/alexlegeartis/RudinConjecture/blob/3fd777450db94362b38a173a2b0652daca43a6e7/lean/RudinABC/PinnedDeepMind.lean\#L19}{final
+  theorem}.
+
 \bibitem{Novakovic}
 Sa{\v s}a Novakovi{\'c}, \emph{A comment on the number of {$k$}-th powers
   inside arithmetic progressions}, 2026,
